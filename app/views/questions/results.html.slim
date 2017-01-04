@@ -1,0 +1,14 @@
+table
+  thead
+    tr
+      th User Mail
+      th Correct Answers
+      th Incorrect answers
+      th Result
+  tbody
+    - User.all.each do |user|
+      tr
+        td = user.email
+        td = user.score_correct
+        td = user.score_incorrect
+        td = #{User.find(user.id).score_correct > 3 ? Pass : Failed}

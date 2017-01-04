@@ -1,0 +1,13 @@
+body oncontextmenu="return false"
+= form_for @question, url: new_user_question_path(question_id: @question.id), html: { class: "main-window" } do |f|
+
+  p #{@question.ask}
+  
+  - @answers.each do |answer|
+
+     p
+     = f.radio_button :score, answer, required: true
+     = f.label :score, answer
+
+  p
+  = f.submit "#{ @question.empty ? 'Finish' : 'Next Question'}"

@@ -1,0 +1,21 @@
+table
+  thead
+    tr
+      th Question
+      th id='center' Your answer
+      th id='center' Correct answer
+      th id='center' Result
+  tbody
+    - current_user.questions.each do |a|
+      tr
+        td = a.ask
+        td id='center' = a.user_answer
+        td id='center' = a.answer
+        td id='center' = a.user_answer == a.answer ? 'Correct' : 'Incorrect'
+
+p 
+b Count of correct answers: #{current_user.score_correct}
+p 
+b Count of incorrect answers: #{current_user.score_incorrect}
+
+p id='result' #{current_user.score_correct > '3' ? 'Pass' : 'Failed'}

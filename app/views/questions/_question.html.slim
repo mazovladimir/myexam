@@ -1,0 +1,27 @@
+= form_for @question, remote: true, html: {id: "form-#{@question.id}"} do |f|
+
+  p #{@question.ask}
+
+  p
+  = f.radio_button :score, 21
+  = f.label :score, "#{@answer1}", value: "#{@answer1}"
+
+  p
+  = f.radio_button :score, 22
+  = f.label :score, "#{@answer2}", value: "#{@answer2}"
+
+  p
+  = f.radio_button :score, 23
+  = f.label :score, "#{@answer3}", value: "#{@answer3}"
+
+  p
+  = f.radio_button :score, 24
+  = f.label :score, "#{@answer4}", value: "#{@answer4}"
+
+  p
+  = f.radio_button :score, 25
+  = f.label :score, "#{@answer5}", value: "#{@answer5}"
+
+  p
+
+  = f.submit "Next Question"
